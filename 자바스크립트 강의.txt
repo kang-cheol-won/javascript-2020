@@ -1,0 +1,182 @@
+스크립트파일은 맨아래 있어야함 바디의 
+
+
+#1-5 
+alert('im working im js') 경고메세지 만드는 코드
+
+
+We never add it AFTER the body.
+
+We add it at the end, BEFORE </body>
+
+This is because we want to load the JS after all our HTML has loaded.
+
+#1-6
+variable (변수)
+
+정의 : 변경되거나 변경될 수 있는 것.
+예시 : a = 5 이다. a = 221로 정정한다.
+a는 빈 상자와 같다. 하나로 쓰이면 의미가 없지만 그 안에 무엇을 담느냐에 따라 우유상자가 될 수 있고 주스상자가 될 수도 있다.
+우리는 빈 상자에 자유롭게 우유를 담기도, 주스를 담기도 한다.
+이처럼 변경되거나 변경될 가능성이 있는 것. 이것을 변수라고 한다.
+
+JS 변수 기본문법 :
+1. 문법은 한 줄에 하나씩 서술한다.
+2. 문법이 끝나면 ; 부호를 넣어준다.
+3. 변수의 시작에 let을 넣는다. (변수의 종류가 두가지라 이를 구분하기 위해 사용한다.)
+
+변수가 작용되는 순서 : 1.만든다. 2.초기화한다. 3.사용한다
+필요할 때 1,2는 동시에 할 수 있다.
+
+ex) a(1번) = 221(2번)
+b = a(3번) - 5
+
+#1-7 
+
+const = constant(상수)
+
+정의 : 변경하거나 변경될 수 없는 값.
+예시 : const a = 5 이다. 라고 지정했다면 a = 221로 정정하고 싶어도 절대로 정정할 수 없다.
+
+var = varible(변수) 를 뜻한다.
+
+let과 같이 var 또한 값을 바꿀 수 있다.
+문제는 변수가 바뀔 때 규칙이 좀 이상하다는거.
+
+var는 let과 const가 나오기 전의 변수 선언 방식이다. 옛날방식 
+
+
+유일한 차이점 : let 을 사용하면 변수가 바뀌는걸 허용 const 허용 x 
+
+0
+
+----------------------
+#1.8 
+
+먼가 메모할때 // 이렇게 2개쓰면 됌 앞에다가  (이건 한줄)
+EX  // TO DO FINISH THIS 
+여러줄은   /*             하고 끝날때  */ 이거 로 끝내면 됌 
+
+변수 선언은 기본적으로 const 로만하고 필요한때만 let 으로해 
+
+String
+const a= "string!!!!!!!!!!"
+
+boolean
+True or False (1 or 0)
+
+Number
+const b = 66;
+
+Float
+const c = 55.1;
+
+
+#1.9
+기본 문법 : 변수명의 처음 시작은 무조건 소문자로 쓴다.
+변수명 중간에 스페이스가 필요하면 스페이스 대신 단어 첫글자를 대문자로 쓴다.
+스페이스가 없더라도 이상한 문자 넣으면 안됨 . 이라던가, / 같은 것들
+
+
+
+const daysOfWeek = "a" (o)
+const treakOrTreat = "b" (o)
+const days.of.week = "a" (x)
+const treak/or/treat = "b" (x)
+
+--------------
+데이터 정렬에 2가지가 있음 
+1. array  2. object
+
+array 를 안쓴다면
+
+const monday = "mon";
+const tueday = "tue";
+const wedday = "wed";
+const thuday = "thu";
+const friday = "fri";
+
+console.log(monday,tueday,wedday,thuday,friday); 
+
+원래는 이렇게해야하는건데 
+arrays통해 데이터를 정렬할 수있음  일일히 정렬 할 필요 없이 
+
+const daysOfWeek = ["mon","tue","wed","thu","fri"]
+
+console.log(daysOfWeek)
+
+이렇게 간편하게 할 수있음  [ ] 이 괄호가 arrays임 
+
+
+
+console.log(daysOfWeek[2])  이렇게하면 세번재있는 wed가 나옴
+컴터는 0부터 카운트 하니까 
+
+
+,,,,,,,,,-----------
+
+#1.10
+
+object 는 {} 이걸로 표현함 
+실제 객체를 만드는것 아래처럼 
+
+const nocoInfo = {
+  name:"Nico",
+  age : 33,
+  gender:"male",
+  isHandosme:true,
+  favMovies: ["along the gods", "oldboy"],
+  favFood: [
+    {
+      name:"kimchi", 
+      fatty:false
+    },
+
+    {
+      name: "cheese burger",
+      fatty: true
+    }
+  ]
+}
+
+
+console.log(nocoInfo)
+
+이렇게 오브젝트안에  array 를 포함시킬수 있고 오브젝트를 또 넣을수도 있따
+
+중요! 자바스크립트 문법 규칙 잘지키삼  "" 꼭양쪽다 넣어주고 쉼표 찍어줄때
+확실히 찍어주기 빼먹으면 오류남 
+
+JS는 말썽이 나도 HTML/CSS는 타격을 받지 않으니 참고
+
+선택은 이렇게 console.log(nocoInfo.favFood)
+
+--------------------------------------------------
+#2.0  
+console.log 함수는 argument를 무한하게 가질수 있다 
+
+
+function sayHello (potato, age ){
+  console.log("hello!", potato, "you have", age, "years of age." ) ;
+}
+
+sayHello("nicolas", 15 );
+
+console.log("hi")
+
+요게 작동 메카니즘  
+
+출력물은  이렇게됌 
+
+hello! nicolas you have 15 years of age.
+hi
+
+#2.1
+
+저번강의처럼 쉼표 노노 
+베틱이 섹시함 
+
+  ``` 요걸 많이씀
+
+
+
