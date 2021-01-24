@@ -68,25 +68,6 @@ h1 {
   outline: none;
 }
 
-.css-toDo {
-  display: flex;
-  justify-content: center;
-}
-.css-toDo input {
-  font-size: 18px;
-  background: none;
-  border: none;
-  border-bottom: 1px solid rgb(255, 255, 255);
-  width: 180px;
-  color: white;
-}
-.css-toDo input::placeholder {
-  color: white;
-}
-.css-toDo input:focus {
-  outline: none;
-}
-
 .css-weather {
   position: absolute;
   top: 15px;
@@ -109,14 +90,8 @@ li {
   color: white;
 }
 ul {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 800px;
-  padding-left: 300px;
-  box-sizing: border-box;
+  width: 150px;
 }
-
 .js-clock {
   display: flex;
   justify-content: center;
@@ -124,4 +99,54 @@ ul {
 button {
   background: transparent;
   border: none;
+}
+
+.css-line {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.toDo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.js-todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.js-toDoForm input {
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  outline: none;
+}
+
+.js-toDoForm input::placeholder {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+.js-toDoForm input:focus {
+  color: white;
+}
+
+h2 {
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.js-todo_blur {
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0.2rem);
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }

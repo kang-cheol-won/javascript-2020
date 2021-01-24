@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>something</title>
     <link rel="stylesheet" href="clock.css">
+    <link rel="stylesheet" href="calcul.css">
 </head> 
 <body>
     <div class="css-line">
@@ -17,23 +18,71 @@
         <div class="bb">
             <h4 class="js-greetings greetings"></h4>
         </div>
+        <div class="toDo">
+            <form action="" class="js-toDoForm">
+                <input type="text" placeholder="Write To do">
+            </form>
+            <div class="js-todo_blur">
+                <div class="js-todo">
+                    <h2>To Do List</h2>
+                    <ul class="js-toDoList"></ul>
+                </div>
+                <div class="js-todo">
+                    <h2>Finished</h2>
+                    <ul class="js-finishedList"></ul>
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="box">
+            <div class="clacul-text">
+                <span class="calculBton">calculator</span>
+            </div>
+            
+            <div class="calbox display-clacul">
+                <div class="button-row">
+                  <input class="buttonInput input"type="text" disabled  />
+          
+                  <button class="c" data-type="ac">c</button>
+                  <button class="number">7</button>
+                  <button class="number">8</button>
+                  <button class="number">9</button>
+                  <button data-type="operator" class="number">+</button>
+          
+                  <button class="number">4</button>
+                  <button class="number">5</button>
+                  <button class="number">6</button>
+                  <button data-type="operator">-</button>
+          
+                  <button class="number">1</button>
+                  <button class="number">2</button>
+                  <button class="number">3</button>
+                  <button data-type="operator">&times;</button>
+          
+                  <button class="zero">0</button>
+                  <button class="equals" data-type="equals">=</button>
+                  <button data-type="operator">&divide;</button>
+                </div>
+            </div>
+
+            
+        </div>
+      
+            
         
-        <form class="js-toDoForm css-toDo">
-            <input type="text" placeholder="Write To Do here">
-        </form>
-        <ul class="js-toDoList">
         
-        </ul>
+       
     </div>
    
     <span class="js-weather css-weather"></span>
 
   
-
-
+  
+    <script src="calculator.js"></script>
     <script src="clock.js"></script>
     <script src="gretting.js"></script>
-    <script src="todo.js"></script>
+    <script src="todos.js"></script>
     <script src="bg.js"></script>
     <script src="weather.js"></script>
 </body>
