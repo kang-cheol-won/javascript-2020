@@ -12,12 +12,18 @@ class Calculator {
     this.operatorChek = true;
     this.equalsCheck = false;
     this.displayContent = "";
+    this.secondClick = true;
     this.clear();
+    this.onlyDisplay = displayElement;
+    this.onlyDisplayContent = "";
+  
+    
   }
   clear() {
     this.displayContent = "";
     this.displayElement.value = 0;
     this.operatorChek = true;
+    this.onlyDisplayContent = "";
   }
   compute() {
     if (this.operatorChek) return;
@@ -25,12 +31,22 @@ class Calculator {
       this.displayContent.replace("\u00D7", "*").replace("\u00F7", "/")
     );
     this.equalsCheck = true;
+    
+    
+    this.onlyDisplayContent = "";
+   
   }
+  
   appendOperator(operator) {
     if (this.operatorChek) return;
     if (this.equalsCheck) this.equalsCheck = false;
     this.displayContent += operator;
+    
     this.operatorChek = true;
+    this.secondClick = false;
+    this.onlyDisplayContent = "";
+    
+
   }
   appendNumber(number) {
     if (this.equalsCheck) {
@@ -41,11 +57,32 @@ class Calculator {
       this.displayContent += number;
     }
     this.operatorChek = false;
+    
+    
   }
+  Second(){
+    if(this.secondClick) return;
+    this.displayContent = eval(
+      this.displayContent.replace("\u00D7", "*").replace("\u00F7", "/")
+    );
+    this.updateDisplay();
+    
+    
+    
+  }
+
+  
 
   updateDisplay() {
     this.displayElement.value = this.displayContent;
     
+  }
+  onlyDisplaygo(number) {
+    
+    this.onlyDisplayContent += number;
+    this.displayElement.value = this.onlyDisplayContent;
+    
+
   }
 }
 
@@ -55,6 +92,7 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => {
     switch (button.dataset.type) {
       case "operator":
+        calculator.Second();
         calculator.appendOperator(button.innerText);
 
         break;
@@ -64,11 +102,12 @@ buttons.forEach((button) => {
       case "equals":
         calculator.compute();
         calculator.updateDisplay();
+       
         break;
 
       default:
         calculator.appendNumber(button.innerText);
-        calculator.updateDisplay();
+        calculator.onlyDisplaygo(button.innerText);
         break;
     }
   });
