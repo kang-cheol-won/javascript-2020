@@ -34,6 +34,7 @@ class Calculator {
     
     
     this.onlyDisplayContent = "";
+    this.secondClick = true;
    
   }
   
